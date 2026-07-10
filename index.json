@@ -1,0 +1,20 @@
+[
+  {
+    "id": "modrinth",
+    "name": "Modrinth Browser",
+    "version": "1.1.0",
+    "author": "Aether Team",
+    "description": "Browse and install mods from Modrinth directly into your instances.",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/modrinth-1.1.0.zip",
+    "trust": "official"
+  },
+  {
+    "id": "fabric",
+    "name": "Fabric",
+    "version": "1.1.0",
+    "author": "Aether Team",
+    "description": "Lightweight and fast mod loader",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/fabric-1.1.0.zip",
+    "trust": "official"
+  }
+]

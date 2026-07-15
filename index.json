@@ -18,5 +18,25 @@
     "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/fabric-1.1.0.zip",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/fabric.png",
     "trust": "verified"
+  },
+  {
+    "id": "forge",
+    "name": "Forge",
+    "version": "1.0.0",
+    "author": "Aether Team",
+    "description": "The original Minecraft mod loader.",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/forge-1.0.0.zip",
+    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/forge.png",
+    "trust": "official"
+  },
+  {
+    "id": "neoforge",
+    "name": "NeoForge",
+    "version": "1.0.0",
+    "author": "Aether Team",
+    "description": "Modern, community-maintained fork of Forge.",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/neoforge-1.0.0.zip",
+    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/neoforge.png",
+    "trust": "official"
   }
 ]

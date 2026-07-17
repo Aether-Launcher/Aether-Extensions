@@ -41,11 +41,12 @@
   },
   {
     "id": "mod-manager",
-    "name": "Local Mod Manager",
+    "name": "Mod Manager",
     "version": "1.0.0",
     "author": "Aether",
-    "description": "Manage local mods for your instances natively inside Aether.",
+    "description": "Manage mods for all your instances.",
     "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/mod-manager-1.0.0.zip",
+    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/mod-manager.png",
     "trust": "official"
   }
 ]

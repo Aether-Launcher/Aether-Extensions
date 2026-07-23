@@ -5,7 +5,7 @@
     "version": "1.2.0",
     "author": "Aether",
     "description": "Browse and install mods from Modrinth directly into your instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/modrinth-1.2.0.zip",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/modrinth-1.2.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/modrinth.png",
     "trust": "official"
   },
@@ -15,7 +15,7 @@
     "version": "1.1.0",
     "author": "Aether",
     "description": "Lightweight and fast mod loader for Minecraft.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/fabric-1.1.0.zip",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/fabric-1.1.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/fabric.png",
     "trust": "official"
   },
@@ -25,7 +25,7 @@
     "version": "1.0.0",
     "author": "Aether",
     "description": "The original Minecraft mod loader.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/forge-1.0.0.zip",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/forge-1.0.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/forge.png",
     "trust": "official"
   },
@@ -35,7 +35,7 @@
     "version": "1.0.0",
     "author": "Aether",
     "description": "Modern, community-maintained fork of Forge.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/neoforge-1.0.0.zip",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/neoforge-1.0.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/neoforge.png",
     "trust": "official"
   },
@@ -45,7 +45,7 @@
     "version": "1.0.0",
     "author": "Aether",
     "description": "Manage mods for all your instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/mod-manager-1.0.0.zip",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/mod-manager-1.0.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/mod-manager.png",
     "trust": "official"
   }

@@ -12,7 +12,7 @@
   {
     "id": "curseforge",
     "name": "Curseforge Browser",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Cribest7890",
     "description": "Browse and install mods from Curseforge directly into your instances.",
     "url": "https://github.com/cribest7890/aether-curseforge/releases/latest/download/curseforge.aex",

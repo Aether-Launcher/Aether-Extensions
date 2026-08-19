@@ -10,16 +10,6 @@
     "trust": "official"
   },
   {
-    "id": "curseforge",
-    "name": "Curseforge Browser",
-    "version": "1.0.1",
-    "author": "Cribest7890",
-    "description": "Browse and install mods from Curseforge directly into your instances.",
-    "url": "https://github.com/cribest7890/aether-curseforge/releases/latest/download/curseforge.aex",
-    "iconUrl": "https://raw.githubusercontent.com/cribest7890/aether-curseforge/refs/heads/main/icon.png",
-    "trust": "community"
-  },
-  {
     "id": "fabric",
     "name": "Fabric",
     "version": "1.1.0",

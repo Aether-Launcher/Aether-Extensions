@@ -48,5 +48,15 @@
     "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/mod-manager-1.0.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/mod-manager.png",
     "trust": "official"
+  },
+  {
+    "id": "curseforge",
+    "name": "Curseforge Browser",
+    "version": "1.0.0",
+    "author": "Cribest7890",
+    "description": "Browse and install mods from Curseforge directly into your instances.",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/curseforge-1.0.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/curseforge.png",
+    "trust": "community"
   }
 ]

@@ -57,6 +57,7 @@
     "description": "Browse and install mods from Curseforge directly into your instances.",
     "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/curseforge-1.0.0.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/curseforge.png",
+    "repository": "https://github.com/cribest7890/aether-curseforge",
     "trust": "community"
   }
 ]

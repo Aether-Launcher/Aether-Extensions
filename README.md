@@ -21,6 +21,8 @@ To publish an extension to this registry:
 2. Host your packaged `.zip` release on GitHub Releases (or another direct-download host).
 3. Open a Pull Request adding your extension metadata to `index.json`. 
 
+Community submissions must include a `repository` field pointing to your extension's GitHub repository. The AetherBot uses it to verify your ownership of the extension via a commit of an `aether-verify.txt` token file.
+
 By default, new submissions will receive the `community` trust tier until they can be manually audited for the `verified` tier.
 
 ## Learn More

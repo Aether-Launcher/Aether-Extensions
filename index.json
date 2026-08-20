@@ -63,10 +63,10 @@
   {
     "id": "quilt",
     "name": "Quilt",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Aether",
     "description": "Modern, community-driven mod loader with Fabric mod support.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/quilt-1.0.1.aex",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/quilt-1.0.2.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/quilt.png",
     "trust": "official"
   }

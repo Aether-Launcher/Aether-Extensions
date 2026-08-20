@@ -59,5 +59,15 @@
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/curseforge.png",
     "repository": "https://github.com/cribest7890/aether-curseforge",
     "trust": "community"
+  },
+  {
+    "id": "quilt",
+    "name": "Quilt",
+    "version": "1.0.0",
+    "author": "Aether",
+    "description": "Modern, community-driven mod loader with Fabric mod support.",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/quilt-1.0.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/quilt.png",
+    "trust": "official"
   }
 ]

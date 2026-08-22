@@ -1,5 +1,11 @@
 # Aether Extension Registry
 
+<p align="center">
+  <a href="https://discord.gg/pQc9NnGhpG">
+    <img src="https://img.shields.io/discord/1276219898393333761?label=Join%20our%20Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge" alt="Discord">
+  </a>
+</p>
+
 This repository serves as the official, curated extension registry for the **[Aether Launcher](https://github.com/wayback09/Aether)**.
 
 Aether relies on this registry to populate its in-app Extension Gallery and assign cryptographic-style trust tiers to extensions, ensuring users know exactly what they are installing.

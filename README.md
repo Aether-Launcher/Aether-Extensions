@@ -18,7 +18,7 @@ Every extension in this registry is assigned one of the following trust tiers:
 - 🟢 **Verified**: Personally reviewed by an Aether maintainer. The code has been thoroughly audited for security, performance, and stability.
 - 🟣 **Community**: Passed automated checks and was merged into the registry via Pull Request, but has not received a manual code audit. Use with caution.
 
-*(Note: Extensions installed locally from `.zip` files rather than through this registry are marked as 🟡 **Local** by the launcher).*
+*(Note: Extensions installed locally from `.aex` files rather than through this registry are marked as 🟡 **Local** by the launcher).*
 
 ## Publishing Your Extension
 

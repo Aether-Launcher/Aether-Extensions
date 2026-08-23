@@ -22,20 +22,20 @@
   {
     "id": "forge",
     "name": "Forge",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Aether",
     "description": "The original Minecraft mod loader.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/forge-1.0.0.aex",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/forge-1.0.1.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/forge.png",
     "trust": "official"
   },
   {
     "id": "neoforge",
     "name": "NeoForge",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Aether",
     "description": "Modern, community-maintained fork of Forge.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/neoforge-1.0.0.aex",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/neoforge-1.0.1.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/neoforge.png",
     "trust": "official"
   },

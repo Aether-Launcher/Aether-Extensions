@@ -69,5 +69,15 @@
     "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/quilt-1.0.2.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/quilt.png",
     "trust": "official"
+  },
+  {
+    "id": "aether.discord-presence",
+    "name": "Discord Rich Presence",
+    "version": "1.0.0",
+    "author": "Aether",
+    "description": "Shows your Minecraft instance in Discord — Idle in launcher or Playing with timer.",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/discord-presence-1.0.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/discord-presence.png",
+    "trust": "official"
   }
 ]

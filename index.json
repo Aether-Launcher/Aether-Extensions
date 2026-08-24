@@ -73,10 +73,10 @@
   {
     "id": "aether.discord-presence",
     "name": "Discord Rich Presence",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Aether",
     "description": "Shows your Minecraft instance in Discord — Idle in launcher or Playing with timer.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/discord-presence-1.0.0.aex",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/discord-presence-1.0.1.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/discord-presence.png",
     "trust": "official"
   }

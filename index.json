@@ -2,10 +2,10 @@
   {
     "id": "modrinth",
     "name": "Modrinth Browser",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "author": "Aether",
     "description": "Browse and install mods from Modrinth directly into your instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/modrinth-1.2.1.aex",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/modrinth-1.2.2.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/modrinth.png",
     "trust": "official"
   },

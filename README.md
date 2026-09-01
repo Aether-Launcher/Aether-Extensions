@@ -6,31 +6,86 @@
   </a>
 </p>
 
-This repository serves as the official, curated extension registry for the **[Aether Launcher](https://github.com/wayback09/Aether)**.
+This repository is the official, curated extension registry for the **[Aether Launcher](https://github.com/Aether-Launcher/Aether)**.
 
-Aether relies on this registry to populate its in-app Extension Gallery and assign cryptographic-style trust tiers to extensions, ensuring users know exactly what they are installing.
+Aether uses this registry to populate its in-app Extension Gallery and assign trust tiers to extensions, so users always know what they're installing.
+
+---
 
 ## Trust Tiers
 
 Every extension in this registry is assigned one of the following trust tiers:
 
-- 🔵 **Official**: Developed and maintained directly by the Aether Team.
-- 🟢 **Verified**: Personally reviewed by an Aether maintainer. The code has been thoroughly audited for security, performance, and stability.
-- 🟣 **Community**: Passed automated checks and was merged into the registry via Pull Request, but has not received a manual code audit. Use with caution.
+- 🔵 **Official** — Developed and maintained directly by the Aether Team.
+- 🟢 **Verified** — Personally reviewed by an Aether maintainer. Code has been thoroughly audited for security, performance, and stability.
+- 🟣 **Community** — Passed automated checks and merged via Pull Request, but has not received a full manual audit. Use with caution.
 
-*(Note: Extensions installed locally from `.zip` files rather than through this registry are marked as 🟡 **Local** by the launcher).*
+*(Extensions installed locally from `.aex` files rather than through this registry are marked 🟡 **Local** by the launcher.)*
+
+---
+
+## Version Compatibility
+
+Extensions may declare a `minLauncherVersion` field in their registry entry (and in their `manifest.json`):
+
+```json
+{
+  "id": "my-extension",
+  "minLauncherVersion": "v1.2.0"
+}
+```
+
+When set, the Aether Gallery will automatically show an **⚠ Requires Aether vX.Y.Z+** badge and block installation for users on older launcher versions, preventing silent failures.
+
+---
 
 ## Publishing Your Extension
 
 To publish an extension to this registry:
-1. Ensure your extension follows the [Extensions Guide](https://github.com/wayback09/Aether/blob/main/docs/EXTENSIONS.md).
-2. Host your packaged `.zip` release on GitHub Releases (or another direct-download host).
-3. Open a Pull Request adding your extension metadata to `index.json`. 
 
-Community submissions must include a `repository` field pointing to your extension's GitHub repository. The AetherBot uses it to verify your ownership of the extension via a commit of an `aether-verify.txt` token file.
+1. Build your extension following the [Extensions Guide](https://github.com/Aether-Launcher/Aether/blob/main/docs/EXTENSIONS.md).
+2. Use the [Aether CLI](https://github.com/Aether-Launcher/Aether-Cli) to validate and package it into a `.aex` file:
+   ```bash
+   aether-cli validate
+   aether-cli build
+   ```
+3. Host the `.aex` release file on GitHub Releases (or another direct-download HTTPS host).
+4. Open a Pull Request adding your extension's entry to [`index.json`](index.json).
 
-By default, new submissions will receive the `community` trust tier until they can be manually audited for the `verified` tier.
+**Required fields in `index.json`:**
+
+```json
+{
+  "id": "your-extension-id",
+  "name": "Your Extension",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "description": "What your extension does.",
+  "url": "https://github.com/.../releases/download/v1.0.0/your-extension-1.0.0.aex",
+  "trust": "community",
+  "minLauncherVersion": "v1.0.0"
+}
+```
+
+Community submissions must include a `repository` field pointing to your extension's public GitHub repository. The AetherBot uses it to verify ownership via a `aether-verify.txt` commit token.
+
+---
+
+## Licensing
+
+Extensions distributed through this registry are subject to the **[Aether Extension API License](https://github.com/Aether-Launcher/Aether-SDK/blob/main/LICENSE)**. Key points:
+
+- ✅ Closed-source extensions are permitted
+- ✅ You retain ownership of your extension's code
+- ✅ Aether reviews all extensions before Gallery listing
+- ❌ Extensions may not be distributed outside approved channels without written permission from Aether
+
+By submitting a Pull Request to this registry you confirm that your extension complies with the Aether Extension API License.
+
+---
 
 ## Learn More
 
-To learn more about the core launcher, how to build extensions, and the sandbox architecture, head over to the main [Aether repository](https://github.com/wayback09/Aether).
+- [Aether Launcher](https://github.com/Aether-Launcher/Aether) — the core launcher
+- [Aether SDK](https://github.com/Aether-Launcher/Aether-SDK) — TypeScript types & helpers (`@aethermc/sdk`)
+- [Aether CLI](https://github.com/Aether-Launcher/Aether-Cli) — scaffold, validate, and build extensions

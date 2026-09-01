@@ -83,10 +83,10 @@
   {
     "id": "screenshot-manager",
     "name": "Screenshot Manager",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Aether",
     "description": "Browse, view, export, and delete screenshots taken across your Minecraft instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/screenshot-manager-1.0.1.aex",
+    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/screenshot-manager-1.0.2.aex",
     "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/screenshot-manager.png",
     "trust": "official"
   }

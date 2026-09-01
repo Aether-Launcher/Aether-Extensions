@@ -5,8 +5,8 @@
     "version": "1.4.0",
     "author": "Aether",
     "description": "Browse and install mods, modpacks, resource packs, and shader packs from Modrinth directly into your instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/modrinth-1.4.0.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/modrinth.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/modrinth-1.4.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/modrinth.png",
     "trust": "official"
   },
   {
@@ -15,8 +15,8 @@
     "version": "1.1.0",
     "author": "Aether",
     "description": "Lightweight and fast mod loader for Minecraft.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/fabric-1.1.0.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/fabric.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/fabric-1.1.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/fabric.png",
     "trust": "official"
   },
   {
@@ -25,8 +25,8 @@
     "version": "1.0.1",
     "author": "Aether",
     "description": "The original Minecraft mod loader.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/forge-1.0.1.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/forge.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/forge-1.0.1.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/forge.png",
     "trust": "official"
   },
   {
@@ -35,8 +35,8 @@
     "version": "1.0.1",
     "author": "Aether",
     "description": "Modern, community-maintained fork of Forge.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/neoforge-1.0.1.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/neoforge.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/neoforge-1.0.1.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/neoforge.png",
     "trust": "official"
   },
   {
@@ -45,8 +45,8 @@
     "version": "1.0.1",
     "author": "Aether",
     "description": "Manage mods for all your instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/mod-manager-1.0.1.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/mod-manager.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/mod-manager-1.0.1.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/mod-manager.png",
     "trust": "official"
   },
   {
@@ -55,8 +55,8 @@
     "version": "1.2.0",
     "author": "Aether & Cribest7890",
     "description": "Browse and install mods, modpacks, resource packs, and shader packs from CurseForge directly into your instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/curseforge-1.2.0.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/curseforge.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/curseforge-1.2.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/curseforge.png",
     "repository": "https://github.com/cribest7890/aether-curseforge",
     "trust": "community"
   },
@@ -66,8 +66,8 @@
     "version": "1.0.2",
     "author": "Aether",
     "description": "Modern, community-driven mod loader with Fabric mod support.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/quilt-1.0.2.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/quilt.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/quilt-1.0.2.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/quilt.png",
     "trust": "official"
   },
   {
@@ -76,8 +76,8 @@
     "version": "1.0.1",
     "author": "Aether",
     "description": "Shows your Minecraft instance in Discord — Idle in launcher or Playing with timer.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/discord-presence-1.0.1.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/discord-presence.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/discord-presence-1.0.1.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/discord-presence.png",
     "trust": "official"
   },
   {
@@ -86,8 +86,8 @@
     "version": "1.0.3",
     "author": "Aether",
     "description": "Browse, view, export, and delete screenshots taken across your Minecraft instances.",
-    "url": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/screenshot-manager-1.0.3.aex",
-    "iconUrl": "https://raw.githubusercontent.com/wayback09/Aether-Extensions/main/icons/screenshot-manager.png",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/screenshot-manager-1.0.3.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/screenshot-manager.png",
     "trust": "official",
     "minLauncherVersion": "v1.3.0"
   }

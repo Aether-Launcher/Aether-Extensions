@@ -48,11 +48,13 @@ To publish an extension to this registry:
    ```bash
    aether-cli validate
    aether-cli build
+   # → your-extension-1.0.0.aex
    ```
-3. Host the `.aex` release file on GitHub Releases (or another direct-download HTTPS host).
-4. Open a Pull Request adding your extension's entry to [`index.json`](index.json).
+3. Open a Pull Request to this repository that includes **both**:
+   - Your packaged **`.aex` file** added to the root of this repo
+   - An entry for your extension added to **[`index.json`](index.json)**
 
-**Required fields in `index.json`:**
+**Example `index.json` entry:**
 
 ```json
 {
@@ -61,13 +63,15 @@ To publish an extension to this registry:
   "version": "1.0.0",
   "author": "Your Name",
   "description": "What your extension does.",
-  "url": "https://github.com/.../releases/download/v1.0.0/your-extension-1.0.0.aex",
+  "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/your-extension-1.0.0.aex",
   "trust": "community",
   "minLauncherVersion": "v1.0.0"
 }
 ```
 
-Community submissions must include a `repository` field pointing to your extension's public GitHub repository. The AetherBot uses it to verify ownership via a `aether-verify.txt` commit token.
+> The `url` field must point to the raw GitHub URL of the `.aex` file you included in the same PR. Do not link to external hosts.
+
+Community submissions must include a `repository` field pointing to your extension's public GitHub repository. The AetherBot uses it to verify ownership via an `aether-verify.txt` commit token.
 
 ---
 

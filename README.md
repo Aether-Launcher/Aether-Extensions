@@ -69,7 +69,7 @@ To publish an extension to this registry:
 }
 ```
 
-> The `url` field must point to the raw GitHub URL of the `.aex` file you included in the same PR. Do not link to external hosts.
+> **Note on target URLs:** Specify the target URL pointing to `main` (e.g. `.../main/your-extension-1.0.0.aex`). During PR review, automated verification checks the `.aex` file directly from your PR branch. Once the PR is merged into `main`, your URL becomes active immediately.
 
 Community submissions must include a `repository` field pointing to your extension's public GitHub repository. The AetherBot uses it to verify ownership via an `aether-verify.txt` commit token.
 

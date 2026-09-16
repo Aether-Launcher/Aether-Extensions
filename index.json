@@ -88,7 +88,6 @@
     "description": "Browse, view, export, and delete screenshots taken across your Minecraft instances.",
     "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/screenshot-manager-1.0.3.aex",
     "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/screenshot-manager.png",
-    "trust": "official",
-    "minLauncherVersion": "v1.3.0"
+    "trust": "official"
   }
 ]

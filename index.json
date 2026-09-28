@@ -89,5 +89,15 @@
     "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/screenshot-manager-1.0.3.aex",
     "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/screenshot-manager.png",
     "trust": "official"
+  },
+  {
+    "id": "server-browser",
+    "name": "Server Browser",
+    "version": "1.3.0",
+    "author": "Cribest7890",
+    "description": "Browse and discover active Minecraft servers with real-time ping, player counts, and MOTDs.",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/server-browser-1.3.0.aex",
+    "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/server-browser.png",
+    "trust": "community"
   }
 ]

@@ -1,0 +1,168 @@
+name: Extension Review
+
+# Automated reviewer for registry PRs: validates index.json + changed .aex
+# packages, posts a pass/fail checklist, and squash-merges PRs that pass.
+#
+# Uses pull_request_target (runs base-branch workflow code with a write token)
+# while checking out the PR head read-only. The reviewer only PARSES
+# manifest.json/index.json as data — extension code is never executed.
+#
+# Guardrails for auto-merge (all must hold):
+#   1. Review job passes (exit 0, no blocking issues).
+#   2. PR is not a draft.
+#   3. PR touches ONLY: *.aex, index.json, icons/*, README.md, LICENSE.
+#      Anything else (notably .github/) needs a human.
+# New registry ids may only claim "community" trust unless the author is the
+# repo owner; escalation to official/verified needs a maintainer.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number to review (manual run)
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: extension-review-${{ github.event.pull_request.number || github.event.inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: Automated review
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      passed: ${{ steps.review.outputs.passed }}
+      pr_number: ${{ steps.pr.outputs.number }}
+    steps:
+      - name: Resolve PR number
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "${{ github.event.pull_request.number }}" ]; then
+            echo "number=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "number=${{ github.event.inputs.pr }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch PR metadata
+        id: meta
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR='${{ steps.pr.outputs.number }}'
+          gh pr view "$PR" --repo "$GITHUB_REPOSITORY" \
+            --json headRefOid,baseRefOid,author,isDraft \
+            --jq '{head: .headRefOid, base: .baseRefOid, author: .author.login, draft: .isDraft}' \
+            > meta.json
+          cat meta.json
+          echo "head=$(jq -r .head meta.json)" >> "$GITHUB_OUTPUT"
+          echo "base=$(jq -r .base meta.json)" >> "$GITHUB_OUTPUT"
+          echo "author=$(jq -r .author meta.json)" >> "$GITHUB_OUTPUT"
+          echo "draft=$(jq -r .draft meta.json)" >> "$GITHUB_OUTPUT"
+          gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json files \
+            --jq '.files[].path' > changed.txt
+          echo "Changed files:"; cat changed.txt
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.meta.outputs.head }}
+          fetch-depth: 0
+
+      - name: Run extension review
+        id: review
+        env:
+          PR_AUTHOR: ${{ steps.meta.outputs.author }}
+        run: |
+          git show '${{ steps.meta.outputs.base }}:index.json' > /tmp/base-index.json
+          CHANGED=$(tr '\n' ' ' < changed.txt)
+          set +e
+          python3 .github/scripts/review_extensions.py \
+            --root "$GITHUB_WORKSPACE" \
+            --base-index /tmp/base-index.json \
+            --changed "$CHANGED" \
+            --pr-author "$PR_AUTHOR" \
+            --repo-owner "${GITHUB_REPOSITORY_OWNER}" \
+            --out report.md
+          CODE=$?
+          set -e
+          cat report.md
+          if [ $CODE -eq 0 ]; then echo "passed=true"; else echo "passed=false"; fi >> "$GITHUB_OUTPUT"
+          echo "DRAFT=${{ steps.meta.outputs.draft }}" >> "$GITHUB_ENV"
+
+      - name: Post review comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR='${{ steps.pr.outputs.number }}'
+          MARKER='aether-extension-review'
+          EXISTING=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --paginate \
+            --jq "[.[] | select(.body | contains(\"$MARKER\"))][0].id // empty")
+          BODY=$(cat report.md)
+          PAYLOAD=$(jq -n --arg body "$BODY" '{body: $body}')
+          if [ -n "$EXISTING" ]; then
+            echo "$PAYLOAD" | gh api --method PATCH \
+              -H "Accept: application/vnd.github+json" \
+              "repos/$GITHUB_REPOSITORY/issues/comments/$EXISTING" --input - \
+              --jq '.html_url'
+          else
+            echo "$PAYLOAD" | gh api --method POST \
+              -H "Accept: application/vnd.github+json" \
+              "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --input - \
+              --jq '.html_url'
+          fi
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-review-report
+          path: report.md
+
+  automerge:
+    name: Auto-merge on pass
+    needs: review
+    if: needs.review.outputs.passed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check merge guardrails
+        id: guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR='${{ needs.review.outputs.pr_number }}'
+          DRAFT=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json isDraft --jq '.isDraft')
+          if [ "$DRAFT" = "true" ]; then
+            echo "PR is a draft — skipping auto-merge."
+            echo "merge=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Only allow-listed paths may auto-merge. Anything else
+          # (especially .github/) requires human review.
+          BAD=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json files \
+            --jq '[.files[].path | select(test("^[^/]+\\.aex$|^index\\.json$|^icons/|^README\\.md$|^LICENSE$") | not)] | join(", ")')
+          if [ -n "$BAD" ]; then
+            echo "Non-allowlisted paths changed ($BAD) — skipping auto-merge."
+            gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body \
+              "Auto-merge skipped: this PR touches files outside the extension payload (\`$BAD\`). A maintainer will review it manually." \
+              || true
+            echo "merge=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "merge=true" >> "$GITHUB_OUTPUT"
+
+      - name: Squash-merge PR
+        if: steps.guard.outputs.merge == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR='${{ needs.review.outputs.pr_number }}'
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --delete-branch

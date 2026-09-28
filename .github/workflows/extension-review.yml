@@ -72,10 +72,24 @@ jobs:
             --jq '.files[].path' > changed.txt
           echo "Changed files:"; cat changed.txt
 
+      # allow-unsafe-pr-checkout is required to check out fork PR heads under
+      # pull_request_target. Reviewed risk, acceptable here because:
+      #   1. Nothing from the PR is ever executed — the reviewer only parses
+      #      index.json/manifest.json as data with the Python stdlib.
+      #   2. The reviewer script itself is pinned to the BASE commit below,
+      #      never taken from the PR.
+      # persist-credentials is off so the checkout can't push anywhere.
       - uses: actions/checkout@v4
         with:
           ref: ${{ steps.meta.outputs.head }}
           fetch-depth: 0
+          allow-unsafe-pr-checkout: true
+          persist-credentials: false
+
+      - name: Use reviewer script from base (never from the PR)
+        run: |
+          git show '${{ steps.meta.outputs.base }}:.github/scripts/review_extensions.py' > /tmp/review_extensions.py
+          python3 -c "import ast; ast.parse(open('/tmp/review_extensions.py').read()); print('reviewer script: syntax OK')"
 
       - name: Run extension review
         id: review
@@ -85,7 +99,7 @@ jobs:
           git show '${{ steps.meta.outputs.base }}:index.json' > /tmp/base-index.json
           CHANGED=$(tr '\n' ' ' < changed.txt)
           set +e
-          python3 .github/scripts/review_extensions.py \
+          python3 /tmp/review_extensions.py \
             --root "$GITHUB_WORKSPACE" \
             --base-index /tmp/base-index.json \
             --changed "$CHANGED" \

@@ -345,6 +345,25 @@ def main():
 
     head_by_id = check_index(review, head_entries, base_by_id, args.pr_author, args.repo_owner)
 
+    # Stale packages: versioned .aex files in the repo that no index entry
+    # points at. Old versions should be removed when a release bumps the
+    # index, otherwise the registry accumulates dead weight. Samples and
+    # unlisted one-offs are exempt.
+    referenced = set()
+    for e in head_by_id.values():
+        url = e.get("url", "")
+        if url.startswith(INDEX_URL_PREFIX):
+            referenced.add(url[len(INDEX_URL_PREFIX):])
+    for fname in sorted(os.listdir(args.root)):
+        if not fname.endswith(".aex"):
+            continue
+        if fname in referenced or fname.startswith("com.example."):
+            continue
+        if re.match(r"^.+-[0-9][0-9A-Za-z.\-]*\.aex$", fname):
+            review.warn(
+                "%s: not referenced by any index.json url — delete it if superseded" % fname
+            )
+
     # Registry iconUrl targets must exist in the repo.
     for eid, e in head_by_id.items():
         icon_url = e.get("iconUrl", "")

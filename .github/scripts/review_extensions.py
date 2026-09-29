@@ -43,6 +43,11 @@ ALLOWED_PERMISSIONS = {
     "launcher:modloader",
     "skin:export",
     "discord:presence",
+    "servers:list",
+    "servers:manage",
+    "servers:process",
+    "saves:list",
+    "instances:launch",
 }
 
 # Permissions that deserve an explicit heads-up in the review (not failures).
@@ -53,6 +58,9 @@ SENSITIVE_PERMISSIONS = {
     "network:http",
     "instances:patch",
     "launcher:modloader",
+    "servers:manage",
+    "servers:process",
+    "instances:launch",
 }
 
 ALLOWED_TRUST = {"official", "verified", "community"}

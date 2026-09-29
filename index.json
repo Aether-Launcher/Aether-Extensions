@@ -103,10 +103,10 @@
   {
     "id": "my-servers",
     "name": "My Servers",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Aether",
     "description": "Play on your saved servers and singleplayer worlds: pick an instance, see live status, and launch the game straight into a server or world.",
-    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/my-servers-1.0.0.aex",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/my-servers-1.0.1.aex",
     "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/my-servers.png",
     "trust": "official"
   }

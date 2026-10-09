@@ -113,10 +113,10 @@
   {
     "id": "skin-selector",
     "name": "Skin Selector",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "author": "Aether",
     "description": "Browse skins from public databases and manage skins and capes on the currently logged-in account.",
-    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/skin-selector-1.0.0.aex",
+    "url": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/skin-selector-1.0.2.aex",
     "iconUrl": "https://raw.githubusercontent.com/Aether-Launcher/Aether-Extensions/main/icons/skin-selector.png",
     "trust": "official"
   }
